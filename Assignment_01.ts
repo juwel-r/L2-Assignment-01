@@ -1,13 +1,17 @@
-{
-  // 
-  const formatString = (input: string, toUpper?: boolean): string => {
+   const formatString = (input: string, toUpper?: boolean): string => {
     if (toUpper || toUpper === undefined) {
       return input.toUpperCase();
     } else {
       return input.toLowerCase();
     }
   };
-// 
+
+
+
+
+
+
+  
   type Item = {
     title: string;
     rating: number;
@@ -19,7 +23,13 @@
     );
     return upperFourRating;
   };
-// 
+  
+
+
+
+
+
+
   const concatenateArrays = <T>(...arrays: T[][]): T[] => {
     const newArray: T[] = [];
     for (let i = 0; i < arrays.length; i++) {
@@ -30,23 +40,36 @@
     }
     return newArray;
   };
-// 
-class Vehicle {
-  constructor(private make: string, private year: number) {}
-  public getInfo() {
-    return(`Make:${this.make}, Year:${this.year}`);
-  }
-}
+  
 
-class Car extends Vehicle {
-  constructor(make: string, year: number, private model: string) {
-    super(make, year);
+
+
+
+
+
+  class Vehicle {
+    constructor(private make: string, private year: number) {}
+    getInfo() {
+      return `Make:${this.make}, Year:${this.year}`;
+    }
   }
-  public getModel(){
-      return (`Model: ${this.model}`);
+
+  class Car extends Vehicle {
+    constructor(make: string, year: number, private model: string) {
+      super(make, year);
+    }
+    public getModel() {
+      return `Model: ${this.model}`;
+    }
   }
-}
-//
+  
+
+
+
+
+
+
+
   const processValue = (value: string | number): number => {
     if (typeof value === "string") {
       return value.length;
@@ -57,7 +80,14 @@ class Car extends Vehicle {
       return 0;
     }
   };
+  
 
+
+
+
+
+
+  
   interface Product {
     name: string;
     price: number;
@@ -73,7 +103,14 @@ class Car extends Vehicle {
     }
     return expensiveProduct;
   };
+  
 
+
+
+
+
+
+  
   enum Day {
     Monday,
     Tuesday,
@@ -91,7 +128,14 @@ class Car extends Vehicle {
       return "Weekday";
     }
   }
+ 
 
+
+
+
+
+
+  
   const squareAsync = (number: number): Promise<number> => {
     return new Promise((resolve, reject) => {
       if (number < 0) {
@@ -103,5 +147,5 @@ class Car extends Vehicle {
       }
     });
   };
-  // 
-}
+  //
+
