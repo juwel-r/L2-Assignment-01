@@ -1,4 +1,5 @@
 {
+  // 
   const formatString = (input: string, toUpper?: boolean): string => {
     if (toUpper || toUpper === undefined) {
       return input.toUpperCase();
@@ -6,7 +7,7 @@
       return input.toLowerCase();
     }
   };
-
+// 
   type Item = {
     title: string;
     rating: number;
@@ -18,7 +19,7 @@
     );
     return upperFourRating;
   };
-
+// 
   const concatenateArrays = <T>(...arrays: T[][]): T[] => {
     const newArray: T[] = [];
     for (let i = 0; i < arrays.length; i++) {
@@ -29,7 +30,23 @@
     }
     return newArray;
   };
+// 
+class Vehicle {
+  constructor(private make: string, private year: number) {}
+  public getInfo() {
+    return(`Make:${this.make}, Year:${this.year}`);
+  }
+}
 
+class Car extends Vehicle {
+  constructor(make: string, year: number, private model: string) {
+    super(make, year);
+  }
+  public getModel(){
+      return (`Model: ${this.model}`);
+  }
+}
+//
   const processValue = (value: string | number): number => {
     if (typeof value === "string") {
       return value.length;
@@ -86,4 +103,5 @@
       }
     });
   };
+  // 
 }
